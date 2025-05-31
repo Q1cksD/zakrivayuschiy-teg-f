@@ -1,1 +1,9 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: 'Inter-Variable', Inter;
+  --accent-font: 'PressStart2P', sans-serif;
+  --main-font-size: 18px;
+  --wdth-main: 400;
+  --wdth-heading: 700;
+  --desktop-width: clamp(375px, 100%, 700px);
+  --mobile-width: 100%;
+}

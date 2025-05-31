@@ -11,7 +11,141 @@
 */
 
 .page {
+  font-family: var(--main-font);
+  font-variation-settings: 'wdth' var(--wdth-main);
+  font-size: var(--main-font-size);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-color: #fff;
 }
 
+.container {
+  inline-size: var(--desktop-width);
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  margin: 100px auto;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  font-family: var(--accent-font);
+  text-align: center;
+  text-wrap: nowrap;
+  margin: auto;
+  padding: clamp(120px, 17vw, 128px) 0; 
+}
+
+.logo span {
+  display: block;
+}
+
+.logo-heading {
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  text-transform: uppercase;
+}
+.logo-description {
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+.main {
+  margin-top: 100px;
+}
+
+.cards {
+  display: grid;
+  row-gap: 50px;
+}
+.card{
+  border: 2px solid #000;
+}
+.card__heading {
+  font-size: var(--main-font-size);
+  font-weight: 700;
+  padding: 3px 10px;
+}
+
+.card__image-container {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: var(--accent-font);
+  opacity: 50%;
+  top: 25px;
+  right: 25px;
+  text-shadow: -1px 0px #fff,  
+     0px 1px #fff,
+    1px  0px #fff,
+     0px  -1px #fff;
+}
+
+.card__image {
+  width: clamp(375px, 100%, 700px);
+  mix-blend-mode: hard-light;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+.card__description {
+  padding: 25px;
+  display: grid;
+  row-gap: 27px;
+}
+
+.card__description-text {
+  font-weight: 400;
+}
+
+.card__button-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  column-gap: 12px;
+  padding: 0;
+  padding: 0 25px 25px 25px;
+}
+
+.card__icon-button {
+
+}
+
+.card__like-button {
+  display: flex;
+  align-items: center;
+  padding: 12.5px 37px;
+  background-color: transparent;
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+}
+
+@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .label {
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    text-shadow: none;
+  }
+} 
+
+@media (width <= 375px) {
+  .container {
+    inline-size: var(--mobile-width);
+  }
+  .card__image {
+    width: 100%;
+  }
+}
