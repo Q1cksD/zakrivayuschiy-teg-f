@@ -1,36 +1,5 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-@keyframes scale {
-  from {
-    scale: 1;
-  }
-
-  to {
-    scale: 1.25;
-  }
-}
-
-@keyframes sparks {
-  from {
-    opacity: 0%;
-  }
-
-  to {
-    opacity: 100%;
-  }
-}
-
 .page {
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wdth' var(--wdth-main);
   font-size: var(--main-font-size);
   min-inline-size: 320px;
@@ -57,7 +26,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   text-align: center;
   text-wrap: nowrap;
   margin: auto;
@@ -94,7 +63,7 @@
 
 .card__heading {
   font-size: var(--main-font-size);
-  font-weight: 700;
+  font-variation-settings: "wdth" 700;
   margin: 0;
   padding: 5px 10px;
   line-height: 22px;
@@ -123,40 +92,41 @@
 
 .card__image {
   display: block;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   mix-blend-mode: hard-light;
 }
 
-.filter-1 {
+.filter-sepia {
   filter: sepia(50%);
 }
 
-.filter-2 {
+.filter-blur {
   filter: blur(4px);
 }
 
-.filter-3 {
+.filter-drop-shadow {
   filter: drop-shadow(-13px 13px 5px #333);
 }
 
-.filter-4 {
+.filter-brightness-contrast-aturate {
   filter: brightness(250%) contrast(120%) saturate(15%);
 }
 
-.filter-5 {
+.filter-grayscale {
   filter: grayscale(50%);
 }
 
-.filter-6 {
+.filter-grayscale-sat-bright-inv {
   filter: grayscale(70%) saturate(60%) brightness(120%) invert(20%);
 }
 
-.filter-7 {
+.filter-invert {
   filter: invert(100%);
 }
 
-.filter-8 {
+.filter-contrast {
   filter: contrast(70%);
 }
 
@@ -192,6 +162,11 @@
   transition: border 0.3s ease;
 }
 
+.box_shadow:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px var(--accent-color);
+}
+
 .card__icon-button:focus {
   outline: none;
 }
@@ -222,11 +197,6 @@
   transition: box-shadow 0.3s ease;
 }
 
-.card__like-button:focus {
-  outline: none;
-  box-shadow: 2px 2px var(--accent-color);
-}
-
 .button-hover-animation {
   position: relative;
   overflow: hidden;
@@ -239,7 +209,7 @@
   top: 0;
   left: 0;
   translate: -100% 0;
-  transition: translate 0.5s ease;
+  transition: translate 0.5s ease-in-out;
   width: 100%;
   height: 100%;
 }
@@ -270,12 +240,8 @@
   border: 2px solid #000;
   padding: 15px 20px;
   color: #fff;
+  background-color: var(--background-color);
   transition: box-shadow 0.3s ease;
-}
-
-.save-button:focus {
-  outline: none;
-  box-shadow: 2px 2px var(--accent-color);
 }
 
 .save-button__image {
@@ -284,7 +250,7 @@
 }
 
 dialog[open] {
-  inline-size: 353px;
+  max-inline-size: 353px;
   padding: 0;
   border: 2px solid #000;
   background-color: var(--background-color);
@@ -332,15 +298,11 @@ dialog::backdrop {
   font-family: var(--accent-font);
   cursor: pointer;
   color: #fff;
+  background-color: var(--background-color);
   text-transform: uppercase;
   border: 2px solid #000;
   padding: 9px 0;
   transition: box-shadow 0.3s ease;
-}
-
-.dialog-close__save-button:focus {
-  outline: none;
-  box-shadow: 2px 2px var(--accent-color);
 }
 
 .heart {
@@ -425,6 +387,11 @@ dialog::backdrop {
     inline-size: var(--mobile-width);
   }
 
+  .label {
+    top: 23px;
+    right: 15px;
+  }
+
   .card__image-container {
     border-top: 0px solid #000;
     border-bottom: 0px solid #000;
@@ -444,5 +411,6 @@ dialog::backdrop {
 
   dialog[open] {
     min-inline-size: 341px;
+    translate: 0 -50%;
   }
 }

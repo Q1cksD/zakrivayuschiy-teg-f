@@ -1,6 +1,6 @@
 :root {
   --main-font: 'Inter-Variable', Inter;
-  --accent-font: 'PressStart2P', sans-serif;
+  --accent-font: 'PressStart2P', fantasy;
   --main-font-size: 18px;
   --main-color: #000;
   --accent-color: #000;
@@ -12,5 +12,8 @@
   --desktop-width: clamp(375px, 100%, 700px);
   --mobile-width: 100%;
   --background-color: #fff;
-  --background-image: repeating-linear-gradient(to right, rgba(211, 211, 211, 1), rgba(211, 211, 211, 0) 2px), repeating-linear-gradient(to bottom, rgba(211, 211, 211, 1), rgba(211, 211, 211, 0) 2px), linear-gradient(to bottom, #e7e7e7 0%, #1a1a1a 100%);
+  --background-image: 
+  repeating-linear-gradient(to right, #d3d3d3 0px, #d3d3d3 2px, transparent 2px,  transparent 4px), 
+  repeating-linear-gradient(to bottom, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
+  linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 }
