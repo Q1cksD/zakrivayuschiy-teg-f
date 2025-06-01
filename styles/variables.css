@@ -2,8 +2,15 @@
   --main-font: 'Inter-Variable', Inter;
   --accent-font: 'PressStart2P', sans-serif;
   --main-font-size: 18px;
+  --main-color: #000;
+  --accent-color: #000;
+  --contour-color: #000;
+  --core-color: #fff;
+  --animation-fill-color: red;
   --wdth-main: 400;
   --wdth-heading: 700;
   --desktop-width: clamp(375px, 100%, 700px);
   --mobile-width: 100%;
+  --background-color: #fff;
+  --background-image: repeating-linear-gradient(to right, rgba(211, 211, 211, 1), rgba(211, 211, 211, 0) 2px), repeating-linear-gradient(to bottom, rgba(211, 211, 211, 1), rgba(211, 211, 211, 0) 2px), linear-gradient(to bottom, #e7e7e7 0%, #1a1a1a 100%);
 }
