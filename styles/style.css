@@ -95,11 +95,16 @@
 .card__heading {
   font-size: var(--main-font-size);
   font-weight: 700;
-  padding: 3px 10px;
+  margin: 0;
+  padding: 5px 10px;
+  line-height: 22px;
 }
 
 .card__image-container {
   position: relative;
+  width: clamp(375px, 100%, 700px);
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 .label {
@@ -117,10 +122,10 @@
 }
 
 .card__image {
-  width: clamp(375px, 100%, 700px);
+  display: block;
+  width: 100%;
+  height: 100%;
   mix-blend-mode: hard-light;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
 }
 
 .filter-1 {
@@ -158,30 +163,32 @@
 .card__description {
   padding: 25px;
   display: grid;
-  row-gap: 27px;
+  row-gap: 26px;
 }
 
 .card__description-text {
   font-weight: 400;
+  font-size: var(--main-font-size);
+  line-height: 21px;
 }
 
 .card__button-container {
   display: flex;
   justify-content: end;
   align-items: center;
-  column-gap: 3px;
+  column-gap: 6px;
   padding: 0;
   padding: 0 25px 25px 25px;
 }
 
 .card__icon-button {
   display: flex;
+  padding: 0;
+  width: 39px;
+  height: 38px;
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
   background-color: transparent;
   border: 2px solid transparent;
-  padding: 0;
   transition: border 0.3s ease;
 }
 
@@ -190,12 +197,13 @@
 }
 
 .card__icon-button:focus-visible {
+  outline: none;
   border: 2px solid var(--accent-color);
 }
 
 .like-icon {
   width: 39px;
-  height: 37px;
+  height: 38px;
 }
 
 .card__like-button {
@@ -203,8 +211,11 @@
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  padding: 12.2px 0;
-  inline-size: 130px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 130px;
+  height: 38px;
+  line-height: 13px;
   background-color: transparent;
   border: 2px solid #000;
   color: #fff;
@@ -242,7 +253,6 @@
   font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
-  line-height: 90%;
   mix-blend-mode: difference;
 }
 
@@ -413,6 +423,11 @@ dialog::backdrop {
 @media (width <=375px) {
   .container {
     inline-size: var(--mobile-width);
+  }
+
+  .card__image-container {
+    border-top: 0px solid #000;
+    border-bottom: 0px solid #000;
   }
 
   .card__image {
