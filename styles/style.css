@@ -224,7 +224,7 @@
 
 .button__text {
   position: relative;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-weight: 400;
   font-size: 14px;
   mix-blend-mode: difference;
@@ -282,7 +282,7 @@ dialog::backdrop {
 }
 
 .dialog-text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -401,5 +401,8 @@ dialog::backdrop {
 
   dialog[open] {
     min-inline-size: 341px;
-    margin-top: 238px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+}
